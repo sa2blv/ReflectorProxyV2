@@ -1,0 +1,13 @@
+[Unit]
+Description=Svx reflector offload Proxy
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/bin/python3 /usr/bin/reflectorproxy.py > /var/log/reflectorproxy.log
+
+[Install]
+WantedBy=multi-user.target
